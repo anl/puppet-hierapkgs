@@ -1,2 +1,4 @@
 # Include this module
-class { 'hierapkgs': }
+class { 'hierapkgs':
+  packages => ['ack', 'tree']
+}
