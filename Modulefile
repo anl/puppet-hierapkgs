@@ -7,4 +7,4 @@ summary 'UNKNOWN'
 description 'UNKNOWN'
 project_page 'UNKNOWN'
 
-dependency 'puppetlabs/stdlib'
+dependency 'puppetlabs/stdlib', '>=3.2.0'
