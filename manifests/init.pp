@@ -1,39 +1,32 @@
 # == Class: hierapkgs
 #
-# Full description of class hierapkgs here.
+# Install a set of packages from a merged Hiera array.
 #
 # === Parameters
-#
-# Document parameters here.
 #
 # [*sample_parameter*]
 #   Explanation of what this parameter affects and what it defaults to.
 #   e.g. "Specify one or more upstream ntp servers as an array."
 #
-# === Variables
-#
-# Here you should define a list of variables that this module would require.
-#
-# [*sample_variable*]
-#   Explanation of how this variable affects the funtion of this class and if it
-#   has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#   External Node Classifier as a comma separated list of hostnames." (Note,
-#   global variables should not be used in preference to class parameters  as of
-#   Puppet 2.6.)
-#
 # === Examples
 #
-#  class { hierapkgs:
-#    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ]
-#  }
+#  Given this in a matching Hiera YAML file:
+#
+#    hierapkgs::package_list: [ 'ack', 'lsof', 'tree' ]
+#
+#  The following manifest:
+#
+#    include hierapkgs
+#
+#  Will install the "ack", "lsof" and "tree" packages.
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Andrew Leonard
 #
 # === Copyright
 #
-# Copyright 2013 Your name here, unless otherwise noted.
+# Copyright 2013 Andrew Leonard
 #
 class hierapkgs ( $packages = hiera_array('hierapkgs::package_list') ) {
 
