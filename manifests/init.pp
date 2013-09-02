@@ -4,9 +4,10 @@
 #
 # === Parameters
 #
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
-#   e.g. "Specify one or more upstream ntp servers as an array."
+# [*packages*]
+#   Array of packages to install; merged from hierapkgs::package_list by
+#   default.  Stdlib's "ensure_packages" is used to install the packages,
+#   so there will be no risk of duplicated package resources.
 #
 # === Examples
 #
